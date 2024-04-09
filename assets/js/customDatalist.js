@@ -18,7 +18,7 @@ class customDatalist {
         
         options.forEach(option => {
             data.push({
-                bobina: option.getAttribute('value'),
+                value: option.getAttribute('value'),
                 label: option.textContent.trim()
             });
         });
@@ -43,10 +43,11 @@ class customDatalist {
             const valueDiv = document.createElement('div');
             const checkbox = document.createElement('input');
             checkbox.type = 'checkbox';
+            checkbox.value = item.value;
             const valueSpan = document.createElement('span');
             const labelP = document.createElement('p');
 
-            valueSpan.textContent = item.bobina;
+            valueSpan.textContent = item.value;
             labelP.textContent = item.label;
 
             valueDiv.appendChild(checkbox);
@@ -70,13 +71,12 @@ class customDatalist {
     }
     
     applyEvents() {
+        this.newDatalist.addEventListener('click', this.addChecklistValues.bind(this));
         this.element.addEventListener('click', this.showDatalist.bind(this));
         document.addEventListener('click', this.hiddeDatalist.bind(this));
     }
 
     hiddeDatalist(event) {
-        console.log(event.target);
-
         if (event.target == this.element
          || this.newDatalist.contains(event.target)
          || !this.newDatalist.classList.contains('active-datalist') ) {
@@ -102,6 +102,17 @@ class customDatalist {
         this.newDatalist.style.left = `${left}px`;
 
         this.newDatalist.focus();
+    }
+
+    addChecklistValues(event) {
+        const checklists = this.newDatalist.querySelectorAll('input:checked');
+        let value = '';
+        
+        checklists.forEach(function (currentValue, currentIndex) {
+            value += (currentIndex == 0 ? '' : ', ') + currentValue.value;
+        });
+
+        this.element.value = value;
     }
 }
 
