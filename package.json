@@ -1,0 +1,23 @@
+{
+  "name": "custom-datalist",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass -w assets/style/scss -o assets/style"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RafaelCecchin/custom-datalist.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RafaelCecchin/custom-datalist/issues"
+  },
+  "homepage": "https://github.com/RafaelCecchin/custom-datalist#readme",
+  "dependencies": {
+    "node-sass": "^9.0.0"
+  }
+}
