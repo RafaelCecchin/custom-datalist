@@ -1,0 +1,40 @@
+.new-datalist {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20rem;
+  height: 15rem;
+  background-color: #fff;
+  display: block;
+  overflow-y: scroll;
+  background-color: #fafafa;
+  border-radius: 0.3rem;
+  box-shadow: 0.1rem 0.1rem 0.5rem #cccccc;
+  display: none; }
+  .new-datalist.active-datalist {
+    display: block; }
+  .new-datalist::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); }
+  .new-datalist::-webkit-scrollbar {
+    width: .4rem; }
+  .new-datalist::-webkit-scrollbar-thumb {
+    background-color: #999999;
+    border-radius: 1rem; }
+  .new-datalist ul {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+    .new-datalist ul li {
+      padding: .5rem;
+      border-bottom: 1px solid #cccccc; }
+      .new-datalist ul li:hover {
+        background-color: #e6e6e6; }
+      .new-datalist ul li label div {
+        margin-bottom: .2rem; }
+        .new-datalist ul li label div input {
+          margin: 0; }
+        .new-datalist ul li label div span {
+          margin-left: .5rem;
+          font-weight: 700; }
+      .new-datalist ul li label p {
+        margin: 0; }
