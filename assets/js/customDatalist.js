@@ -121,3 +121,14 @@ Object.defineProperty(Element.prototype, 'customDatalist', {
         return new customDatalist(this);
     }
 });
+
+if (typeof jQuery !== 'undefined') {
+    Object.defineProperty($.fn, 'customDatalist', {
+        value: function() {
+            this.each(function() {
+                new customDatalist(this);
+            });
+            return this;
+        }
+    });
+}
