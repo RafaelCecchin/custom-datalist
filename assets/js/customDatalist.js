@@ -17,10 +17,21 @@ class customDatalist {
         let data = [];
         
         options.forEach(option => {
-            data.push({
+            let itemData = {
                 value: option.getAttribute('value'),
-                label: option.textContent.trim()
-            });
+                label: option.textContent.trim(),
+                attributes: {}
+            };
+
+            for(let i = 0; i < option.attributes.length; i++) {
+                let attr = option.attributes[i];
+                
+                if(attr.name !== 'value') {
+                    itemData.attributes[attr.name] = attr.value;
+                }
+            }
+
+            data.push(itemData);
         });
 
         return data;
@@ -44,6 +55,10 @@ class customDatalist {
             const checkbox = document.createElement('input');
             checkbox.type = 'checkbox';
             checkbox.value = item.value;
+            for(let attr in item.attributes) {
+                checkbox.setAttribute(attr, item.attributes[attr]);
+            }
+
             const valueSpan = document.createElement('span');
             const labelP = document.createElement('p');
 
