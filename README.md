@@ -20,6 +20,7 @@ Adicione a seguinte linha de código no seu arquivo JavaScript:
 
 ```javascript
 document.querySelector('your-selector').customDatalist();
+//$('your-selector').customDatalist(); // Caso você utilize jQuery
 ```
 
 Lembre-se de substituir `your-selector` pelo seletor CSS correto que você deseja usar para selecionar o elemento `<datalist>`.
